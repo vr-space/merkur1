@@ -113,25 +113,12 @@
     <div class="container">
         <div class="item">
             <model-viewer src="assets\merkur.glb" ar ar-placement="floor" ar-modes="webxr scene-viewer quick-look" shadow-intensity="0" 
-            camera-controls alt="Merkur letadlo" xr-environment>
-                <button id="hotspotButton"
-                slot="hotspot-one"
-                data-position="..." data-normal="...">Play animation</button>
-
-                   <button slot="ar-button" id="ar-button">
+            camera-controls alt="Merkur letadlo" xr-environment>                
                 <img src="assets\ARlogo.png" class="Arlogo"/>
                     <span class="tab"></span>View in AR!
             </button>
         </model-viewer>
-        <script>
-            hotspotButton.addEventListener('click', () => {
-              if (modelViewer.paused) {
-                modelViewer.play();
-              } else {
-                modelViewer.pause();
-              }
-            });
-            </script>
+        
         </div>        
     </div> 
    
