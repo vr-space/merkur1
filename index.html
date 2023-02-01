@@ -113,12 +113,22 @@
     <div class="container">
         <div class="item">
             <model-viewer src="assets\Merkur.glb" ar ar-placement="floor" ar-modes="webxr scene-viewer quick-look"
-            camera-controls xr-environment>
+            camera-controls alt="Merkur" xr-environment>
             <button slot="ar-button" id="ar-button">
                 <img src="assets\ARlogo.png" class="Arlogo"/>
                     <span class="tab"></span>View in AR!
             </button>
+            <button id="animabutton">Play animation</button>
         </model-viewer>
+        <script>
+            animabutton.addEventListener('click', () => {
+              if (modelViewer.paused) {
+                modelViewer.play();
+              } else {
+                modelViewer.pause();
+              }
+            });
+            </script>
         </div>        
     </div> 
    
