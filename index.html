@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Merkur letadlo</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<style>
+    html, body {
+    margin: 0;
+    height: 100%;
+    }
+    .header {
+        padding-top: 10px;
+        padding-bottom: 3px;        
+        text-align: center;
+        background: #ffffff; 
+
+        width: 100%;  
+        
+    }
+    .footer {
+        padding-top: 5px;
+        padding-bottom: 10px;        
+        text-align: center;
+        background: #000000; 
+        color: white;
+        position: fixed;
+        bottom: 0;
+        font-family:Roboto;
+        font-size: 10pt;
+        width: 100%;  
+    }
+    .logo{
+        height: 64px;
+    }
+    .Arlogo{
+        height: 64px;        
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        min-height: 80%; /* tady to zmen*/
+    }
+
+    .item {
+        flex: 100%;
+        min-height: 100%;
+    }
+
+    :not(:defined) > * {
+    display: none;
+  }
+    model-viewer {
+        background-color: #ffffff;
+        overflow-x: hidden;
+        --poster-color: #ffffff;
+        width: 100%;
+        min-height: 100%;
+    }
+    #ar-button {
+    background-image: url(assets\ARlogo.png);
+    background-repeat: no-repeat;
+    background-size: 320px 80px;
+    background-position: 12px 50%;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    bottom: 132px;
+    padding: 16px 30px 16px 30px;
+    font-family: Roboto Regular, Helvetica Neue, sans-serif;
+    font-size: 64px;
+    color:#000000;
+    vertical-align: middle;
+    
+    height: 164px;
+    width: 600px;
+    line-height: 36px;
+    border-radius: 18px;
+    border: 1px solid #DADCE0;
+  }
+
+  #ar-button:active {
+    background-color: #E8EAED;
+  }
+
+  #ar-button:focus {
+    outline: none;
+  }
+
+  #ar-button:focus-visible {
+    outline: 1px solid #000000;
+  }
+  .tab {
+            display: inline-block;
+            margin-left: 10px;
+        }
+  
+  
+</style>
+
+<body> 
+    <div class="header">
+    
+        <p><a href="https://vrspace.cz/en/#1">
+            <img src="assets\logo.png" class="logo"/>
+        </a></p>
+          </div>   
+    <div class="container">
+        <div class="item">
+            <model-viewer src="assets\merkur.glb" ar ar-placement="floor" ar-modes="webxr scene-viewer quick-look" shadow-intensity="0" environment-image="assets\autoshop_01_2k.hdr" 
+            camera-controls alt="Merkur letadlo" xr-environment>
+                <button id="hotspotButton"
+                slot="hotspot-one"
+                data-position="..." data-normal="...">Play animation</button>
+                   <button slot="ar-button" id="ar-button">
+                <img src="assets\ARlogo.png" class="Arlogo"/>
+                    <span class="tab"></span>View in AR!
+            </button>
+        </model-viewer>
+        <script>
+            hotspotButton.addEventListener('click', () => {
+              if (modelViewer.paused) {
+                modelViewer.play();
+              } else {
+                modelViewer.pause();
+              }
+            });
+            </script>
+        </div>        
+    </div> 
+   
+</body>
+
+</html>
