@@ -42,7 +42,7 @@
     .container {
         display: flex;
         justify-content: center;
-        min-height: 95%; /* tady to zmen*/
+        min-height: 100%; /* tady to zmen*/
     }
 
     .item {
@@ -70,7 +70,7 @@
     left: 50%;
     transform: translateX(-50%);
     white-space: nowrap;
-    bottom: 156px;
+    bottom: 200px;
     padding: 16px 30px 16px 30px;
     font-family: Roboto Regular, Helvetica Neue, sans-serif;
     font-size: 64px;
@@ -91,7 +91,7 @@
     left: 50%;
     transform: translateX(-50%);
     white-space: nowrap;
-    bottom: 0px;
+    bottom: 36px;
     padding: 16px 30px 16px 30px;
     font-family: Roboto Regular, Helvetica Neue, sans-serif;
     font-size: 64px;
@@ -134,7 +134,7 @@
     <div class="container">
         <div class="item">
             <model-viewer src="assets\Merkur.glb" ar ar-placement="floor" ar-modes="webxr scene-viewer quick-look"
-            camera-controls alt="Merkur" xr-environment>
+            camera-controls alt="Merkur" xr-environment camera-target="0m -0.007m 0m">
             <button slot="ar-button" id="ar-button">
                 <img src="assets\ARlogo.png" class="Arlogo"/>
                     <span class="tab"></span>View in AR!
